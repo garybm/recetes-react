@@ -3,9 +3,10 @@
 _Published_  4/19/2019 <br>
 _Author_ **Gary Bermudez**
 
-# Description:
-I will be rebuilding the homepage of the Bose website [Bose Homepage](https://www.bose.com/en_us/index.html).
-This is a project I built for school after finishing two weeks of learning ANGULAR to demonstrate understanding of the fundamental concepts. This ANGULAR application includes a working Firebase database and it has been deployed here [My ANGULAR Application](https://site-rebuild-80a1a.firebaseapp.com/).
+# Project’s Purpose or Goal:
+
+I want to create an app for people who wants to easily find recipes with ingredients they have available at home. Also, I would like to give to the user the ability to create and save their own recipes.
+
 
 Here is a list of components I created for this project:
 
