@@ -21,6 +21,7 @@ class SignIn extends React.Component {
   render () {
 
     let fbContent;
+    
     if(this.state.isLoggedIn) {
       fbContent = null;
     } else {
