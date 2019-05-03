@@ -27,11 +27,11 @@ This project was created using the React Library.
 
 ![Component structure](src/assets/images/component-tree.jpg)
 
-### Sketch wireframes: 
+### Sketch wireframes:
 
-![Deigns](src/assets/images/form.jpg)
-![Deigns](src/assets/images/signup.jpg)
-![Deigns](src/assets/images/recipedetail.jpg)
+![Designs](src/assets/images/form.jpg)
+![Designs](src/assets/images/signup.jpg)
+![Designs](src/assets/images/recipedetail.jpg)
 
 
 # Setup/Installation Requirements
