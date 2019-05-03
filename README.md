@@ -27,6 +27,12 @@ This project was created using the React Library.
 
 ![Component structure](src/assets/images/component-tree.jpg)
 
+### Sketch wireframes: 
+
+![Deigns](src/assets/images/form.jpg)
+![Deigns](src/assets/images/signup.jpg)
+![Deigns](src/assets/images/recipedetail.jpg)
+
 
 # Setup/Installation Requirements
 
@@ -67,7 +73,7 @@ This project was created using the React Library.
 * Adobe Spark
 * Adobe Capture
 * Materialize from Google: A modern responsive front-end framework based on Material Design
-* Facebook for developers: Social Plugins 
+* Facebook for developers: Social Plugins
 
 ## Support and contact details
 
