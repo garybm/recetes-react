@@ -29,7 +29,7 @@ This project was created using the React Library.
 
 ### Sketch wireframes:
 
-![Designs](src/assets/images/form.jpg)
+![Designs](src/assets/images/login.jpg)
 ![Designs](src/assets/images/signup.jpg)
 ![Designs](src/assets/images/recipedetail.jpg)
 
