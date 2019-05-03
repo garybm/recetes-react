@@ -1,9 +1,9 @@
 # Recettes
 
-_Published_  4/19/2019 <br>
+_Published_  5/3/2019 <br>
 _Author_ **Gary Bermudez**
 
-# Project’s Purpose or Goal:
+# Project’s Purpose:
 
 I want to create an app for people who wants to easily find recipes with ingredients they have available at home. Also, I would like to give to the user the ability to create and save their own recipes.
 
@@ -15,7 +15,7 @@ Here is a list of components I created for this project:
 * Recipe Details: This component has the structure or model to represent a recipe
 * Create Recipe: This component has a form so that the user can create a new recipe
 * Search: Search for existing recipes(API)
-* Sign In 
+* Sign In
 * Sign Out
 * Navigation: This component needs to have two different states: Logged in and Logged out states. Each state will display different links accordingly
 * Footer: Footer links (still pending, not sure if I will need one)
@@ -66,6 +66,8 @@ This project was created using the React Library.
 * Firebase (to be implemented)
 * Adobe Spark
 * Adobe Capture
+* Materialize from Google: A modern responsive front-end framework based on Material Design
+* Facebook for developers: Social Plugins 
 
 ## Support and contact details
 

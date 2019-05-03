@@ -1,11 +1,9 @@
 import React from 'react';
 
-function Navigation () {
-
+function RecipeDetails () {
   return (
     <div>
     </div>
   )
 }
-
-export default Navigation;
+  export default RecipeDetails;
