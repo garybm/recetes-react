@@ -10,19 +10,22 @@ I want to create an app for people who wants to easily find recipes with ingredi
 
 Here is a list of components I created for this project:
 
-* Header: top navigation menu
-* KegList: This component acts like the homepage. It will display the list of all kegs.
-* Keg: This component has the structure or model to represent a keg.
-* NewKegForm: This component has a form so that the user can create a new keg with different properties.
-* EditKeg: This component has a form that allows the user to edit an existing keg and change its properties.
-* Error: This is a custom error message for the application.
+* App(Root)
+* Dashboard: This component will display the recipe list component and the search results component
+* Recipe Details: This component has the structure or model to represent a recipe
+* Create Recipe: This component has a form so that the user can create a new recipe
+* Search: Search for existing recipes(API)
+* Sign In 
+* Sign Out
+* Navigation: This component needs to have two different states: Logged in and Logged out states. Each state will display different links accordingly
+* Footer: Footer links (still pending, not sure if I will need one)
+* 404 Error: This is a custom error message for the application
 
 This project was created using the React Library.
 
 ### Here is the app's component structure
 
-![Component structure](src/assets/images/component-structure.jpg)
-
+![Component structure](src/assets/images/component-tree.jpg)
 
 
 # Setup/Installation Requirements
@@ -33,6 +36,7 @@ This project was created using the React Library.
 * React
 
 #### Cloning the Github repository (Mac OSX):
+
 ##### Important Note on  Firebase Credentials: If you decide to clone this repository, please make sure to acquire your own Firebase credentials and place them please them in a file `src/app/api-keys.ts`. See example below:
 
 `export const masterFirebaseConfig = {
@@ -45,10 +49,10 @@ This project was created using the React Library.
 
 * Open the Terminal in your computer
 * Make sure you're in your Desktop directory
-* Clone the repository `git clone`: https://github.com/garybm/tap-room
+* Clone the repository `git clone`: https://github.com/garybm/recettes-react
 * In your Terminal, navigate to the project site-rebuild
 * Run `npm install` in the terminal to install dependencies
-* Run `npm run start` in your terminal: The npm run startcommand launches the server. The `start` option automatically opens your browser to http://localhost:8080/#/.
+* Run `npm run start` in your terminal: The npm run startcommand launches the server. The `start` opens [http://localhost:3000](http://localhost:3000) to view it in the browser
 
 ### Known Bugs
 
@@ -58,7 +62,10 @@ This project was created using the React Library.
 * React
 * JSX
 * CSS
+* HTML
 * Firebase (to be implemented)
+* Adobe Spark
+* Adobe Capture
 
 ## Support and contact details
 
