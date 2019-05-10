@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 
-class Navigation extends React.Component {
+class SignedInLinks extends React.Component {
 
   state = {
     on: false,
