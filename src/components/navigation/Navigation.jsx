@@ -79,13 +79,15 @@ class Navigation extends React.Component {
       nav {
         position: relative;
       }
-
       .nav-links {
         position: fixed;
         background-color: #f2c743;
         height: 90vh;
         width: 100%;
         flex-direction: column;
+      }
+      .nav-links li {
+        font-size: 24px;
       }
     `}</style>
       <nav>
@@ -99,14 +101,14 @@ class Navigation extends React.Component {
             <div className="line"> </div>
           </div>
         </div>
-        {this.state.on && (
+        {this.state.on &&
           <ul className="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">Log In</a></li>
             <li><a href="#">Log Out</a></li>
-            <li><a href="#">Add A Recipe</a></li>
+            <li><a href="#">Add Recipe</a></li>
           </ul>
-        )}
+        }
       </nav>
     </div>
   )
