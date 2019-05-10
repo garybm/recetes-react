@@ -87,7 +87,7 @@ class SignedInLinks extends React.Component {
             <li><a href="#">Home</a></li>
             <li><a href="#">Add Recipe</a></li>
             <li><a href="#">Log Out</a></li>
-            <li>GB</li>
+            <li><a href="#">GB</a></li>
           </ul>
       </nav>
     </div>

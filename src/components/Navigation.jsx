@@ -105,6 +105,7 @@ class Navigation extends React.Component {
         </div>
         {this.state.on &&
           <SignedInLinks />
+
         }
       </nav>
     </div>
