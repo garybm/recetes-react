@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import { Link } from 'react-router-dom';
 
-class SignedInLinks extends React.Component {
+class SignedOutLinks extends React.Component {
 
   render() {
   return (
@@ -84,9 +84,9 @@ class SignedInLinks extends React.Component {
     `}</style>
       <nav>
           <ul className="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Add Recipe</a></li>
-            <li><a href="#">Log Out</a></li>
+            <li><a href="#">New</a></li>
+            <li><a href="#">Notifications</a></li>
+            <li><a href="#">Log In</a></li>
             <li>GB</li>
           </ul>
       </nav>
@@ -95,4 +95,4 @@ class SignedInLinks extends React.Component {
 }
 }
 
-export default SignedInLinks;
+export default SignedOutLinks;
