@@ -19,11 +19,6 @@ class Navigation extends React.Component {
   return (
     <div className="container">
       <style jsx>{`
-      * {
-        margin: 0;
-        padding: 0;
-
-      }
       .menuLogo {
         height: 10vh;
         width: 100%;

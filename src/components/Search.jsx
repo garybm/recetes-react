@@ -3,7 +3,9 @@ import React from 'react';
 function Search () {
 
   return (
-    <div></div>
+    <div>
+      <p>search</p>
+    </div>
   );
 }
 
