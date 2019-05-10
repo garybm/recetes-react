@@ -1,13 +1,18 @@
 import React from 'react';
-import Navigation from './Navigation';
-import FacebookSignIn from './FacebookSignIn';
+import  {BrowserRouter} from 'react-router-dom';
+import Navigation from './Navigation'
 
 
-
-function App() {
-  return (
-    <Navigation/>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <Navigation />
+        </BrowserRouter>
+      </div>
+    );
+  }
 }
 
 export default App;
