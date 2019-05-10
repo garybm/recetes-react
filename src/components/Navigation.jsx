@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
+import SignedInLinks from './SignedInLinks';
 
 class Navigation extends React.Component {
 
@@ -103,12 +104,7 @@ class Navigation extends React.Component {
           </div>
         </div>
         {this.state.on &&
-          <ul className="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Log In</a></li>
-            <li><a href="#">Log Out</a></li>
-            <li><a href="#">Add Recipe</a></li>
-          </ul>
+          <SignedInLinks />
         }
       </nav>
     </div>

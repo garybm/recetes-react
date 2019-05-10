@@ -1,18 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
+import { Link } from 'react-router-dom';
 
 class SignedInLinks extends React.Component {
-
-  state = {
-    on: false,
-  }
-
-  toggle = () => {
-    this.setState({
-      on: !this.state.on
-    })
-  }
 
   render() {
   return (
@@ -92,28 +83,15 @@ class SignedInLinks extends React.Component {
       }
     `}</style>
       <nav>
-        <div className="menuLogo">
-          <div className="imageContainer">
-            <Link to='/'><a href="#"><img src={logo} alt="website-logo"></img></a></Link>
-          </div>
-          <div className="hamburger" onClick={this.toggle}>
-            <div className="line"> </div>
-            <div className="line"> </div>
-            <div className="line"> </div>
-          </div>
-        </div>
-        {this.state.on &&
           <ul className="nav-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Log In</a></li>
-            <li><a href="#">Log Out</a></li>
             <li><a href="#">Add Recipe</a></li>
+            <li><a href="#">Log In</a></li>
           </ul>
-        }
       </nav>
     </div>
   )
 }
 }
 
-export default Navigation;
+export default SignedInLinks;
