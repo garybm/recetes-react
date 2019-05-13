@@ -7,50 +7,11 @@ class SignedInLinks extends React.Component {
 
   render() {
   return (
-    <div className="container">
+    <div>
       <style jsx>{`
-      * {
-        margin: 0;
-        padding: 0;
 
-      }
-      .menuLogo {
-        height: 10vh;
-        width: 100%;
-        display: flex;
-        // border: 1px red solid;
-      }
-      .hamburger {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: 50%;
-        justify-content: center;
-        align-items: flex-end;
-        cursor: pointer;
-        transform: translate( -10%);
-        // border: 1px red solid;
-      }
-
-      .imageContainer {
-        height: 100%;
-        width: 50%;
-        cursor: pointer;
-        // border: 1px red solid;
-      }
-
-
-      img {
-        width: 150px;
-        height: 150px;
-        // border: 1px red solid;
-        transform: translate( 10%, -25%);
-
-      }
       .nav-links {
         display: flex;
-        list-style: none;
-        width:50%;
         height: 100%;
         justify-content: space-around;
         margin-left: auto;
@@ -58,38 +19,36 @@ class SignedInLinks extends React.Component {
       }
 
       .nav-links li a {
-        color: white;
+        color: #3D5E68;
         text-decoration: none;
       }
 
-      .line {
-        width: 30px;
-        height: 3px;
-        background: #3D5E68;
-        margin: 5px;
-      }
-      nav {
-        position: relative;
-      }
+
       .nav-links {
         position: fixed;
-        background-color: #f2c743;
         height: 90vh;
         width: 100%;
         flex-direction: column;
       }
+
       .nav-links li {
         font-size: 24px;
+        transition: width 2s, height 2s, transform 1s;
+
       }
+      li:hover{
+      transform: scale(1.5);
+      }
+
     `}</style>
-      <nav>
-          <ul className="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Add Recipe</a></li>
-            <li><a href="#">Log Out</a></li>
-            <li><a href="#">GB</a></li>
-          </ul>
-      </nav>
+      <ul className="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Add Recipe</a></li>
+        <li><a href="#">Log Out</a></li>
+        <li><a href="#">GB</a></li>
+      </ul>
+      <div>
+      </div>
     </div>
   )
 }
