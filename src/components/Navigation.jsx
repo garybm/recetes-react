@@ -19,6 +19,10 @@ class Navigation extends React.Component {
   return (
     <div>
       <style jsx>{`
+        *{
+          font-family: 'PT Serif', serif;
+          font-size: 16px;
+        }
       .menuLogo {
         height: 10vh;
         width: 100%;
@@ -29,7 +33,7 @@ class Navigation extends React.Component {
         display: flex;
         flex-direction: column;
         height: 100%;
-        width: 100%;
+        width: 50%;
         justify-content: center;
         align-items: flex-end;
         cursor: pointer;
@@ -42,14 +46,13 @@ class Navigation extends React.Component {
         width: 50%;
       }
 
-
       img {
         width: 150px;
         height: 150px;
         transform: translate( 10%, -25%);
 
       }
-  
+
       .line {
         width: 30px;
         height: 3px;

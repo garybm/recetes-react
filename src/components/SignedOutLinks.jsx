@@ -1,98 +1,68 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
+import facebook from '../assets/images/facebook.png';
+import twitter from '../assets/images/twitter.png';
+import instagram from '../assets/images/instagram.png';
 import { Link } from 'react-router-dom';
 
 class SignedOutLinks extends React.Component {
 
   render() {
   return (
-    <div className="container">
+    <div>
       <style jsx>{`
-      * {
-        margin: 0;
-        padding: 0;
 
-      }
-      .menuLogo {
-        height: 10vh;
-        width: 100%;
-        display: flex;
-        // border: 1px red solid;
-      }
-      .hamburger {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: 50%;
-        justify-content: center;
-        align-items: flex-end;
-        cursor: pointer;
-        transform: translate( -10%);
-        // border: 1px red solid;
-      }
-
-      .imageContainer {
-        height: 100%;
-        width: 50%;
-        cursor: pointer;
-        // border: 1px red solid;
-      }
-
-
-      img {
-        width: 150px;
-        height: 150px;
-        // border: 1px red solid;
-        transform: translate( 10%, -25%);
-
-      }
       .nav-links {
         display: flex;
-        list-style: none;
-        width:50%;
         height: 100%;
         justify-content: space-around;
         margin-left: auto;
         align-items: center;
       }
-
       .nav-links li a {
-        color: white;
+        color: #3D5E68;
         text-decoration: none;
       }
 
-      .line {
-        width: 30px;
-        height: 3px;
-        background: #3D5E68;
-        margin: 5px;
-      }
-      nav {
-        position: relative;
-      }
       .nav-links {
         position: fixed;
-        background-color: #f2c743;
         height: 90vh;
         width: 100%;
         flex-direction: column;
       }
-      .nav-links li {
+
+      a{
+        font-weight: 500;
         font-size: 24px;
       }
+
+      .nav-links li {
+        transition: width 2s, height 2s, transform 1s;
+      }
+      li:hover{
+      transform: scale(1.5);
+      }
+
+      .social img {
+        width: 34px;
+        height: 34px;
+        margin: 20px;
+      }
+
     `}</style>
-      <nav>
-          <ul className="nav-links">
-            <li><a href="#">New</a></li>
-            <li><a href="#">Notifications</a></li>
-            <li><a href="#">Log In</a></li>
-            <li>GB</li>
-          </ul>
-      </nav>
+      <ul className="nav-links">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">LOG IN</a></li>
+        <div className="social">
+          <a href="#"><img src={instagram} alt="website-logo"></img></a>
+          <a href="#"><img src={facebook} alt="website-logo"></img></a>
+          <a href="#"><img src={twitter} alt="website-logo"></img></a>
+        </div>
+      </ul>
     </div>
   )
-}
+  }
 }
 
 export default SignedOutLinks;

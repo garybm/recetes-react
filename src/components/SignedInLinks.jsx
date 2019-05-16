@@ -1,6 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
+import facebook from '../assets/images/facebook.png';
+import twitter from '../assets/images/twitter.png';
+import instagram from '../assets/images/instagram.png';
 import { Link } from 'react-router-dom';
 
 class SignedInLinks extends React.Component {
@@ -31,27 +34,39 @@ class SignedInLinks extends React.Component {
         flex-direction: column;
       }
 
-      .nav-links li {
+      a{
+        font-weight: 500;
         font-size: 24px;
-        transition: width 2s, height 2s, transform 1s;
+      }
 
+      .nav-links li {
+        transition: width 2s, height 2s, transform 1s;
       }
       li:hover{
       transform: scale(1.5);
       }
 
+      .social img {
+        width: 34px;
+        height: 34px;
+        margin: 20px;
+      }
+
     `}</style>
       <ul className="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Add Recipe</a></li>
-        <li><a href="#">Log Out</a></li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ADD</a></li>
+        <li><a href="#">LOG OUT</a></li>
         <li><a href="#">GB</a></li>
+        <div className="social">
+          <a href="#"><img src={instagram} alt="website-logo"></img></a>
+          <a href="#"><img src={facebook} alt="website-logo"></img></a>
+          <a href="#"><img src={twitter} alt="website-logo"></img></a>
+        </div>
       </ul>
-      <div>
-      </div>
     </div>
   )
-}
+  }
 }
 
 export default SignedInLinks;

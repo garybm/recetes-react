@@ -8,11 +8,18 @@ class Dashboard extends React.Component {
 
     return (
       <div className="dashboard container">
+        <style jsx>{`
+            .col {
+              border: 1px red solid;
+            }
+
+        `}</style>
         <div className="row">
-          <div className="col s12 m6"></div>
+          <div className="col s12 m6">
+            <RecipeList />
+            </div>
           <div className="col s12 m5 offset-m1">
             <Search />
-            <RecipeList />
           </div>
         </div>
       </div>
