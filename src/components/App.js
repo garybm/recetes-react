@@ -5,6 +5,7 @@ import Dashboard from './Dashboard'
 import RecipeDetails from './RecipeDetails'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
+import CreateRecipe from './CreateRecipe'
 
 
 class App extends React.Component {
@@ -18,6 +19,7 @@ class App extends React.Component {
             <Route path='/recipe/:id' component={RecipeDetails}/>
             <Route path='/signin' component={SignIn}/>
             <Route path='/signup' component={SignUp}/>
+            <Route path='/add' component={CreateRecipe}/>
           </Switch>
       </div>
     </BrowserRouter>
