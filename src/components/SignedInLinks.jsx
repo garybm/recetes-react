@@ -1,13 +1,19 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import CreateRecipe from './CreateRecipe'
 
 const SignedInLinks = () => {
   return (
     <div>
+      <style jsx>{`
+        ul .btn {
+          background-color: #95a00d;
+        }
+      `}</style>
       <ul className="right">
-        <li><NavLink to='/create'>Add Recipe</NavLink></li>
+        <li><NavLink to='/add'>Add Recipe</NavLink></li>
         <li><NavLink to='/'>Log Out</NavLink></li>
-        <li><NavLink to='/' className="btn btn-floating pink lighten-1">NN</NavLink></li>
+        <li><NavLink to='/' className="btn btn-floating lighten-1">GB</NavLink></li>
       </ul>
     </div>
   )

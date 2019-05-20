@@ -27,7 +27,6 @@ class Navigation extends React.Component {
         height: 10vh;
         width: 100%;
         display: flex;
-
       }
       .hamburger {
         display: flex;

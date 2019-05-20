@@ -17,6 +17,17 @@ class CreateRecipe extends Component {
   render() {
     return (
       <div className="container">
+        <style jsx>{`
+          button {
+            background-color: #95a00d;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            width: 254px;
+            height: 50px;
+            cursor: pointer;
+          }
+          `}</style>
         <form className="white" onSubmit={this.handleSubmit}>
           <h5 className="grey-text text-darken-3">Add New Recipe</h5>
           <div className="input-field">
@@ -25,10 +36,14 @@ class CreateRecipe extends Component {
           </div>
           <div className="input-field">
             <textarea id="content" className="materialize-textarea" onChange={this.handleChange}></textarea>
+            <label htmlFor="content">Ingredient</label>
+          </div>
+          <div className="input-field">
+            <textarea id="content" className="materialize-textarea" onChange={this.handleChange}></textarea>
             <label htmlFor="content">Description</label>
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1">Add</button>
+            <button class="button">ADD</button>
           </div>
         </form>
       </div>

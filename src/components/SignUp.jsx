@@ -42,7 +42,7 @@ class SignUp extends Component {
         width:50%;
         margin: auto;
         // margin-top: 10%;
-        padding: 15px;
+        padding: 50px;
       }
       .input-field label {
         color: white;
@@ -50,11 +50,20 @@ class SignUp extends Component {
       .input-field input {
         color: white;
       }
+      button {
+        background-color: #95a00d;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        width: 254px;
+        height: 50px;
+        cursor: pointer;
+      }
       `}</style>
         <img className="background" src={background}
         alt='background'/>
         <form className="formContainer" onSubmit={this.handleSubmit}>
-          <h5 className="white-text text-darken-3">Sign Up</h5>
+          <h5 className=" white-text text-darken-3">SIGN UP</h5>
           <div className="input-field">
             <label htmlFor="email">Email</label>
             <input type="email" id='email' onChange={this.handleChange} />
@@ -72,7 +81,7 @@ class SignUp extends Component {
             <input type="text" id='lastName' onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Sign Up</button>
+            <button>SIGN UP</button>
           </div>
         </form>
       </div>

@@ -40,7 +40,7 @@ class SignIn extends Component {
           width:50%;
           margin: auto;
           // margin-top: 10%;
-          padding: 15px;
+          padding: 50px;
         }
         .input-field label {
           color: white;
@@ -48,11 +48,20 @@ class SignIn extends Component {
         .input-field input {
           color: white;
         }
+        button {
+          background-color: #95a00d;
+          color: white;
+          border: none;
+          border-radius: 25px;
+          width: 254px;
+          height: 50px;
+          cursor: pointer;
+        }
         `}</style>
         <img className="background" src={background}
           alt='PGE Company Logo'/>
         <form className="formContainer" onSubmit={this.handleSubmit}>
-          <h5 className="white-text text-white">Sign In</h5>
+          <h5 className="white-text text-white">SIGN IN</h5>
           <div className="input-field">
             <label htmlFor="email">Email</label>
             <input type="email" id='email' onChange={this.handleChange} />
@@ -62,7 +71,7 @@ class SignIn extends Component {
             <input type="password" id='password' onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Login</button>
+            <button>LOGIN</button>
           </div>
         </form>
       </div>
