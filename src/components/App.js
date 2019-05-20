@@ -3,6 +3,8 @@ import  { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navigation from './Navigation'
 import Dashboard from './Dashboard'
 import RecipeDetails from './RecipeDetails'
+import SignIn from './SignIn'
+import SignUp from './SignUp'
 
 
 class App extends React.Component {
@@ -14,6 +16,8 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={Dashboard}/>
             <Route path='/recipe/:id' component={RecipeDetails}/>
+            <Route path='/signin' component={SignIn}/>
+            <Route path='/signup' component={SignUp}/>
           </Switch>
       </div>
     </BrowserRouter>
