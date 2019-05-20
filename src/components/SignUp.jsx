@@ -1,5 +1,5 @@
-
 import React, { Component } from 'react'
+import background from '../assets/images/background.jpg';
 
 class SignUp extends Component {
   state = {
@@ -19,9 +19,42 @@ class SignUp extends Component {
   }
   render() {
     return (
-      <div className="container">
-        <form className="white" onSubmit={this.handleSubmit}>
-          <h5 className="grey-text text-darken-3">Sign Up</h5>
+      <div className="mainContainer">
+      <style jsx>{`
+      .mainContainer {
+        width: 100%;
+        index-z: 1;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+      .formContainer{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width:50%;
+        margin: auto;
+        // margin-top: 10%;
+        padding: 15px;
+      }
+      .input-field label {
+        color: white;
+      }
+      .input-field input {
+        color: white;
+      }
+      `}</style>
+        <img className="background" src={background}
+        alt='background'/>
+        <form className="formContainer" onSubmit={this.handleSubmit}>
+          <h5 className="white-text text-darken-3">Sign Up</h5>
           <div className="input-field">
             <label htmlFor="email">Email</label>
             <input type="email" id='email' onChange={this.handleChange} />
