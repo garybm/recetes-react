@@ -6,6 +6,7 @@ import RecipeDetails from './RecipeDetails'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
 import CreateRecipe from './CreateRecipe'
+import Navbar from './Navbar'
 
 
 class App extends React.Component {
@@ -13,7 +14,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
       <div className="App">
-          <Navigation />
+          <Navbar />
           <Switch>
             <Route exact path='/' component={Dashboard}/>
             <Route path='/recipe/:id' component={RecipeDetails}/>
