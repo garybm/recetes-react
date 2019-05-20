@@ -19,19 +19,13 @@ class SignedInLinks extends React.Component {
         justify-content: space-around;
         margin-left: auto;
         align-items: center;
+        z-index: 1;
+        border: 1px solid green;
       }
 
       .nav-links li a {
         color: #3D5E68;
         text-decoration: none;
-      }
-
-
-      .nav-links {
-        position: fixed;
-        height: 90vh;
-        width: 100%;
-        flex-direction: column;
       }
 
       a{
@@ -42,8 +36,9 @@ class SignedInLinks extends React.Component {
       .nav-links li {
         transition: width 2s, height 2s, transform 1s;
       }
+
       li:hover{
-      transform: scale(1.5);
+        transform: scale(1.5);
       }
 
       .social img {
