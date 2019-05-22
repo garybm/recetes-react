@@ -57,6 +57,13 @@ class SignIn extends Component {
           height: 50px;
           cursor: pointer;
         }
+        input[type=text]:not(.browser-default):focus:not([readonly]),
+        input[type=email]:not(.browser-default):focus:not([readonly]),
+        input[type=password]:not(.browser-default):focus:not([readonly]),
+        textarea.materialize-textarea:focus:not([readonly]){
+          border-color: #95a00d;
+          box-shadow: none;
+        }
         `}</style>
         <img className="background" src={background}
           alt='PGE Company Logo'/>

@@ -25,13 +25,22 @@ class SignUp extends Component {
         width: 100%;
         index-z: 1;
       }
-      img {
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
+      body {
+        background: url(../assets/images/background.jpg);
+        background-size: 100%;
+        background-position: bottom;
       }
+
+      html {
+        min-height:100%;
+      }
+      img {
+        background-repeat: no-repeat;
+        width: 100%;
+        background-position: bottom;
+        min-height: 100%;
+      }
+
       .formContainer{
         background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
         color: white;
@@ -59,31 +68,44 @@ class SignUp extends Component {
         height: 50px;
         cursor: pointer;
       }
+      input[type=text]:not(.browser-default):focus:not([readonly]),
+      input[type=email]:not(.browser-default):focus:not([readonly]),
+      input[type=password]:not(.browser-default):focus:not([readonly]),
+      textarea.materialize-textarea:focus:not([readonly]){
+        border-color: #95a00d;
+        box-shadow: none;
+      }
+      input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+      textarea.materialize-textarea:focus:not([readonly]) + label,
+      input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+      input[type=password]:not(.browser-default):focus:not([readonly]) + label{
+        color: #95a00d !important;
+      }
       `}</style>
-        <img className="background" src={background}
-        alt='background'/>
-        <form className="formContainer" onSubmit={this.handleSubmit}>
+      <img className="background" src={background}
+        alt='PGE Company Logo'/>
+          <form className="formContainer" onSubmit={this.handleSubmit}>
           <h5 className=" white-text text-darken-3">SIGN UP</h5>
           <div className="input-field">
-            <label htmlFor="email">Email</label>
-            <input type="email" id='email' onChange={this.handleChange} />
+          <label htmlFor="email">Email</label>
+          <input type="email" id='email' onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <label htmlFor="password">Password</label>
-            <input type="password" id='password' onChange={this.handleChange} />
+          <label htmlFor="password">Password</label>
+          <input type="password" id='password' onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <label htmlFor="firstName">First Name</label>
-            <input type="text" id='firstName' onChange={this.handleChange} />
+          <label htmlFor="firstName">First Name</label>
+          <input type="text" id='firstName' onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <label htmlFor="lastName">Last Name</label>
-            <input type="text" id='lastName' onChange={this.handleChange} />
+          <label htmlFor="lastName">Last Name</label>
+          <input type="text" id='lastName' onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <button>SIGN UP</button>
+          <button>SIGN UP</button>
           </div>
-        </form>
+          </form>
       </div>
     )
   }

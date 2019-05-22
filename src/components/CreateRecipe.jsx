@@ -27,6 +27,19 @@ class CreateRecipe extends Component {
             height: 50px;
             cursor: pointer;
           }
+          input[type=text]:not(.browser-default):focus:not([readonly]),
+          input[type=email]:not(.browser-default):focus:not([readonly]),
+          input[type=password]:not(.browser-default):focus:not([readonly]),
+          textarea.materialize-textarea:focus:not([readonly]){
+            border-color: #95a00d;
+            box-shadow: none;
+          }
+          input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+          textarea.materialize-textarea:focus:not([readonly]) + label,
+          input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+          input[type=password]:not(.browser-default):focus:not([readonly]) + label{
+            color: #95a00d !important;
+          }
           `}</style>
         <form className="white" onSubmit={this.handleSubmit}>
           <h5 className="grey-text text-darken-3">Add New Recipe</h5>
