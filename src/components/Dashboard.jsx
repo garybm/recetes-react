@@ -14,20 +14,14 @@ class Dashboard extends React.Component {
 
     return (
       <div className="dashboard container">
+        <h2>My Recipes</h2>
         <style jsx>{`
             .col {
-              border: 1px red solid;
+              // border: 1px red solid;
             }
 
         `}</style>
-        <div className="row">
-          <div className="col s12 m6">
             <RecipeList recipes={recipes} />
-            </div>
-          <div className="col s12 m5 offset-m1">
-            <Search />
-          </div>
-        </div>
       </div>
     );
   }
