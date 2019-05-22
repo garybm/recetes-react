@@ -1,9 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createRecipe } from '../store/actions/recipeActions'
 
 class CreateRecipe extends Component {
   state = {
     title: '',
-    content: ''
+    content: '',
+    description: ''
   }
   handleChange = (e) => {
     this.setState({
@@ -12,7 +15,8 @@ class CreateRecipe extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
+    this.props.createRecipe(this.state);
   }
   render() {
     return (
@@ -52,8 +56,8 @@ class CreateRecipe extends Component {
             <label htmlFor="content">Ingredient</label>
           </div>
           <div className="input-field">
-            <textarea id="content" className="materialize-textarea" onChange={this.handleChange}></textarea>
-            <label htmlFor="content">Description</label>
+            <textarea id="description" className="materialize-textarea" onChange={this.handleChange}></textarea>
+            <label htmlFor="description">Description</label>
           </div>
           <div className="input-field">
             <button class="button">ADD</button>
@@ -64,4 +68,10 @@ class CreateRecipe extends Component {
   }
 }
 
-export default CreateRecipe
+const mapDispatchToProps = dispatch => {
+  return {
+    createRecipe: (recipe) => dispatch(createRecipe(recipe))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(CreateRecipe)
