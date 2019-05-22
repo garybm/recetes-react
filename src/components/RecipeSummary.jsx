@@ -10,7 +10,7 @@ const RecipeSummary = ({recipe}) => {
           }
           .card {
             border: 1px #95a00d solid;
-            width: 50%;
+            width: 45%;
           }
       `}</style>
       <div className="card-content grey-text text-darken-3">

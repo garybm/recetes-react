@@ -7,7 +7,9 @@ const RecipeList = ({recipes}) => {
       <style jsx>{`
           .recipe-list {
             display: flex;
-            border: 1px red solid;
+            flex-wrap: wrap;
+            // border: 1px red solid;
+            justify-content: space-between;
           }
             `}</style>
       { recipes && recipes.map(recipe => {

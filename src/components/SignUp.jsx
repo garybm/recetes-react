@@ -18,27 +18,34 @@ class SignUp extends Component {
     console.log(this.state);
   }
   render() {
+    var sectionStyle = {
+      width: "100%",
+      height: "100vh",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundImage: `url(${background})`
+    };
+
     return (
-      <div className="mainContainer">
+      <div style={ sectionStyle } className="mainContainer">
       <style jsx>{`
       .mainContainer {
         width: 100%;
-        index-z: 1;
-      }
-      body {
-        background: url(../assets/images/background.jpg);
+        background-image: url{background};
         background-size: 100%;
         background-position: bottom;
+        height: 100%;
       }
 
-      html {
-        min-height:100%;
+      body, html {
+      height: 100%;
+      margin: 0;
       }
+
       img {
-        background-repeat: no-repeat;
         width: 100%;
-        background-position: bottom;
-        min-height: 100%;
+        height: auto;
       }
 
       .formContainer{
@@ -49,6 +56,7 @@ class SignUp extends Component {
         left: 50%;
         transform: translate(-50%, -50%);
         width:50%;
+        // height: 100vh;
         margin: auto;
         // margin-top: 10%;
         padding: 50px;
@@ -82,8 +90,7 @@ class SignUp extends Component {
         color: #95a00d !important;
       }
       `}</style>
-      <img className="background" src={background}
-        alt='PGE Company Logo'/>
+
           <form className="formContainer" onSubmit={this.handleSubmit}>
           <h5 className=" white-text text-darken-3">SIGN UP</h5>
           <div className="input-field">

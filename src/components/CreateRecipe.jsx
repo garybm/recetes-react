@@ -44,6 +44,9 @@ class CreateRecipe extends Component {
           input[type=password]:not(.browser-default):focus:not([readonly]) + label{
             color: #95a00d !important;
           }
+          .btn-floating {
+            background-color: #F2C743;
+          }
           `}</style>
         <form className="white" onSubmit={this.handleSubmit}>
           <h5 className="grey-text text-darken-3">Add New Recipe</h5>
@@ -54,10 +57,12 @@ class CreateRecipe extends Component {
           <div className="input-field">
             <textarea id="ingredient" className="materialize-textarea" onChange={this.handleChange}></textarea>
             <label htmlFor="ingredient">Ingredient</label>
+            <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
           </div>
           <div className="input-field">
             <textarea id="description" className="materialize-textarea" onChange={this.handleChange}></textarea>
             <label htmlFor="description">Description</label>
+            <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
           </div>
           <div className="input-field">
             <button class="button">ADD</button>

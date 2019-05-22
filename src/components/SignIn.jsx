@@ -16,12 +16,24 @@ class SignIn extends Component {
     console.log(this.state);
   }
   render() {
+    var sectionStyle = {
+      width: "100%",
+      height: "100vh",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundImage: `url(${background})`
+    };
     return (
-      <div className="mainContainer">
+      <div style={ sectionStyle } className="mainContainer">
         <style jsx>{`
         .mainContainer {
           width: 100%;
           index-z: 1;
+        }
+        body, html {
+        height: 100%;
+        margin: 0;
         }
         img {
           width: 100%;
@@ -65,8 +77,6 @@ class SignIn extends Component {
           box-shadow: none;
         }
         `}</style>
-        <img className="background" src={background}
-          alt='PGE Company Logo'/>
         <form className="formContainer" onSubmit={this.handleSubmit}>
           <h5 className="white-text text-white">SIGN IN</h5>
           <div className="input-field">
