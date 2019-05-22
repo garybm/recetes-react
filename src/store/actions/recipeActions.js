@@ -1,6 +1,17 @@
 export const createRecipe = (recipe) => {
-  return (dispatch, getState) => {
+  return (dispatch, getState, {getFirestore}) => {
     // make async call to database
-    dispatch({ type: 'CREATE_RECIPE', recipe });
+    const firestore = getFirestore();
+    firestore.collection('recipes').add({
+      ...recipe,
+      authorFirstName: 'Gary',
+      authorLastName: 'Bermudez',
+      authorID: 12345,
+      createdAt: new Date()
+    }).then(() => {
+      dispatch({ type: 'CREATE_RECIPE', recipe });
+    }).catch((err) => {
+      dispatch({type: 'CREATE_RECIPE_ERROR', err});
+    })
   }
 };

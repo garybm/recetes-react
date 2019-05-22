@@ -15,6 +15,6 @@ import 'firebase/auth'
   // Initialize Firebase
 
 firebase.initializeApp(config);
-firebase.firestore().settings({timestampsInSnapshops:true});
+// firebase.firestore().settings({timestampsInSnapshops:true});
 
 export default firebase;

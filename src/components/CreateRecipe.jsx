@@ -5,7 +5,7 @@ import { createRecipe } from '../store/actions/recipeActions'
 class CreateRecipe extends Component {
   state = {
     title: '',
-    content: '',
+    ingredient: '',
     description: ''
   }
   handleChange = (e) => {
@@ -52,8 +52,8 @@ class CreateRecipe extends Component {
             <label htmlFor="title">Recipe Title</label>
           </div>
           <div className="input-field">
-            <textarea id="content" className="materialize-textarea" onChange={this.handleChange}></textarea>
-            <label htmlFor="content">Ingredient</label>
+            <textarea id="ingredient" className="materialize-textarea" onChange={this.handleChange}></textarea>
+            <label htmlFor="ingredient">Ingredient</label>
           </div>
           <div className="input-field">
             <textarea id="description" className="materialize-textarea" onChange={this.handleChange}></textarea>
