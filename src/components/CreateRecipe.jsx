@@ -47,8 +47,36 @@ class CreateRecipe extends Component {
           .btn-floating {
             background-color: #F2C743;
           }
+          img {
+             width: 300px;
+             margin-bottom: 20px;
+           }
+           .buttonsMain {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+          }
+          .uploader {
+              -webkit-appearance: none;
+              appearance: none;
+              width: 50%;
+              margin-bottom: 10px;
+            }
           `}</style>
         <form className="white" onSubmit={this.handleSubmit}>
+          <img src={this.state.url || 'https://via.placeholder.com/150'} alt="uploaded images"/>
+        <div className="buttonsMain">
+        <input
+            style={{display: 'none'}}
+            type="file"
+            onChange={this.handleChange}
+            ref={fileInput => this.fileInput = fileInput}/>
+          <button onClick={() => this.fileInput.click()}>Select File</button>
+          <button onClick={this.handleUpload}>Upload</button>
+          </div>
+          <progress className="uploader" value={this.state.progress}/>
           <h5 className="grey-text text-darken-3">Add New Recipe</h5>
           <div className="input-field">
             <input type="text" id='title' onChange={this.handleChange} />
