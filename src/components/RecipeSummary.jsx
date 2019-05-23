@@ -3,14 +3,15 @@ import olla from '../assets/images/olla.jpg';
 
 const RecipeSummary = ({recipe}) => {
   return (
-    <div className="card z-depth-0 recipe-summary">
+    <div className="card">
       <style jsx>{`
           img {
             width: 100%;
           }
           .card {
             border: 1px #95a00d solid;
-            width: 45%;
+            width: 30%;
+            margin: 1.5%;
           }
       `}</style>
       <div className="card-content grey-text text-darken-3">

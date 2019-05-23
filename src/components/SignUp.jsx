@@ -35,7 +35,6 @@ class SignUp extends Component {
         background-image: url{background};
         background-size: 100%;
         background-position: bottom;
-        height: 100%;
       }
 
       body, html {
@@ -43,12 +42,7 @@ class SignUp extends Component {
       margin: 0;
       }
 
-      img {
-        width: 100%;
-        height: auto;
-      }
-
-      .formContainer{
+      form {
         background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
         color: white;
         position: absolute;
@@ -56,11 +50,10 @@ class SignUp extends Component {
         left: 50%;
         transform: translate(-50%, -50%);
         width:50%;
-        // height: 100vh;
         margin: auto;
-        // margin-top: 10%;
         padding: 50px;
       }
+
       .input-field label {
         color: white;
       }
@@ -90,28 +83,27 @@ class SignUp extends Component {
         color: #95a00d !important;
       }
       `}</style>
-
           <form className="formContainer" onSubmit={this.handleSubmit}>
-          <h5 className=" white-text text-darken-3">SIGN UP</h5>
-          <div className="input-field">
-          <label htmlFor="email">Email</label>
-          <input type="email" id='email' onChange={this.handleChange} />
-          </div>
-          <div className="input-field">
-          <label htmlFor="password">Password</label>
-          <input type="password" id='password' onChange={this.handleChange} />
-          </div>
-          <div className="input-field">
-          <label htmlFor="firstName">First Name</label>
-          <input type="text" id='firstName' onChange={this.handleChange} />
-          </div>
-          <div className="input-field">
-          <label htmlFor="lastName">Last Name</label>
-          <input type="text" id='lastName' onChange={this.handleChange} />
-          </div>
-          <div className="input-field">
-          <button>SIGN UP</button>
-          </div>
+            <h5 className=" white-text text-darken-3">SIGN UP</h5>
+            <div className="input-field">
+              <label htmlFor="email">Email</label>
+              <input type="email" id='email' onChange={this.handleChange} />
+            </div>
+            <div className="input-field">
+              <label htmlFor="password">Password</label>
+              <input type="password" id='password' onChange={this.handleChange} />
+            </div>
+            <div className="input-field">
+              <label htmlFor="firstName">First Name</label>
+              <input type="text" id='firstName' onChange={this.handleChange} />
+            </div>
+            <div className="input-field">
+              <label htmlFor="lastName">Last Name</label>
+              <input type="text" id='lastName' onChange={this.handleChange} />
+            </div>
+            <div className="input-field">
+              <button>SIGN UP</button>
+            </div>
           </form>
       </div>
     )
