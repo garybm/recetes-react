@@ -1,6 +1,8 @@
-import firebase from 'firebase/app'
-import 'firebase/firestore'
-import 'firebase/auth'
+
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
+
 
 // Your web app's Firebase configuration
   var config = {
@@ -15,6 +17,6 @@ import 'firebase/auth'
   // Initialize Firebase
 
 firebase.initializeApp(config);
-// firebase.firestore().settings({timestampsInSnapshops:true});
+// firebase.firestore().setti9ngs({timestampsInSnapshops:true});
 
 export default firebase;

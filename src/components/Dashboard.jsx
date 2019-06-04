@@ -13,12 +13,9 @@ class Dashboard extends React.Component {
     const { recipes } = this.props;
 
     return (
-      <div className="dashboard container">
+      <div className="container">
         <h2>My Recipes</h2>
         <style jsx>{`
-            .col {
-              // border: 1px red solid;
-            }
 
         `}</style>
             <RecipeList recipes={recipes} />

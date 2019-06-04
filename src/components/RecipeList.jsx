@@ -4,16 +4,26 @@ import { Link } from 'react-router-dom'
 
 const RecipeList = ({recipes}) => {
   return (
-    <div >
+    <div className="summary">
       <style jsx>{`
-          .container {
-            border: solid 1px red;
-          }
-            `}</style>
+      .summary {
+        // border: 1px red solid;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .recipe-list {
+        display: flex;
+        flex-wrap:wrap;
+        // border: 1px red solid;
+        width: 40%;
+        margin: 3%;
+      }
+      `}</style>
       { recipes && recipes.map(recipe => {
         return (
-          <Link className="recipe" to={ '/recipe/' + recipe.id} >
-            <RecipeSummary recipe={recipe} key={recipe.id} />
+          <Link className="recipe-list" to={ '/recipe/' + recipe.id} >
+            <RecipeSummary recipe={recipe}/>
           </Link>
         )
       })}

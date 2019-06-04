@@ -1,5 +1,5 @@
 import React from 'react';
-import olla from '../assets/images/olla.jpg';
+import chifrijo from '../assets/images/chifrijo.jpg';
 
 const RecipeSummary = ({recipe}) => {
   return (
@@ -10,13 +10,13 @@ const RecipeSummary = ({recipe}) => {
           }
           .card {
             border: 1px #95a00d solid;
-            width: 30%;
+            width: 100%;
             margin: 1.5%;
           }
       `}</style>
       <div className="card-content grey-text text-darken-3">
-        <img  src={olla}
-          alt='PGE Company Logo'/>
+        <img  src={chifrijo}
+          alt='image of the recipe'/>
         <span className="card-title">{recipe.title}</span>
         <p>{recipe.description}</p>
         <p className="grey-text">3rd of september, 2am</p>

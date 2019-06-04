@@ -9,15 +9,17 @@ class CreateRecipe extends Component {
     description: ''
   }
   handleChange = (e) => {
-    this.setState({
-      [e.target.id]: e.target.value
-    })
-  }
-  handleSubmit = (e) => {
-    e.preventDefault();
-    // console.log(this.state);
-    this.props.createRecipe(this.state);
-  }
+      this.setState({
+        [e.target.id]: e.target.value
+      })
+    }
+    handleSubmit = (e) => {
+      e.preventDefault();
+      // console.log(this.state);
+      this.props.createRecipe(this.state);
+      this.props.history.push('/');
+    }
+
   render() {
     return (
       <div className="container">
@@ -66,17 +68,6 @@ class CreateRecipe extends Component {
             }
           `}</style>
         <form className="white" onSubmit={this.handleSubmit}>
-          <img src={this.state.url || 'https://via.placeholder.com/150'} alt="uploaded images"/>
-        <div className="buttonsMain">
-        <input
-            style={{display: 'none'}}
-            type="file"
-            onChange={this.handleChange}
-            ref={fileInput => this.fileInput = fileInput}/>
-          <button onClick={() => this.fileInput.click()}>Select File</button>
-          <button onClick={this.handleUpload}>Upload</button>
-          </div>
-          <progress className="uploader" value={this.state.progress}/>
           <h5 className="grey-text text-darken-3">Add New Recipe</h5>
           <div className="input-field">
             <input type="text" id='title' onChange={this.handleChange} />
