@@ -8,17 +8,11 @@ import { compose } from 'redux'
 
 class Dashboard extends React.Component {
   render() {
-
-    // console.log(this.props);
     const { recipes } = this.props;
-
     return (
       <div className="container">
         <h2>My Recipes</h2>
-        <style jsx>{`
-
-        `}</style>
-            <RecipeList recipes={recipes} />
+          <RecipeList recipes={recipes} />
       </div>
     );
   }
@@ -30,9 +24,5 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default compose(
-  connect(mapStateToProps),
-  firestoreConnect([
-    {collection: 'recipes'}
-  ])
+export default compose(connect(mapStateToProps), firestoreConnect([{collection: 'recipes'}])
 )(Dashboard)

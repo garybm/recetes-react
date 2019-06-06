@@ -15,10 +15,12 @@ class CreateRecipe extends Component {
     }
     handleSubmit = (e) => {
       e.preventDefault();
-      // console.log(this.state);
       this.props.createRecipe(this.state);
       this.props.history.push('/');
     }
+
+
+
 
   render() {
     return (
@@ -99,3 +101,18 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(null, mapDispatchToProps)(CreateRecipe)
+
+
+// <div>
+//   <div className="buttonsMain">
+//     <input
+//       style={{display: 'none'}}
+//       type="file"
+//       onChange={this.handleChange}
+//       ref={fileInput => this.fileInput = fileInput}/>
+//     <button onClick={() => this.fileInput.click()}>Select File</button>
+//     <button onClick={this.handleUpload}>Upload</button>
+//   </div>
+//   <progress className="uploader" value={this.state.progress}/>
+//   <img src={this.state.url || 'https://via.placeholder.com/150'} alt="uploaded images"/>
+// </div>

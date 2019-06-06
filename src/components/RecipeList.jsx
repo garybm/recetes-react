@@ -22,7 +22,7 @@ const RecipeList = ({recipes}) => {
       `}</style>
       { recipes && recipes.map(recipe => {
         return (
-          <Link className="recipe-list" to={ '/recipe/' + recipe.id} >
+          <Link className="recipe-list" to={ '/recipe/' + recipe.id} key={recipe.id}>
             <RecipeSummary recipe={recipe}/>
           </Link>
         )
@@ -32,13 +32,3 @@ const RecipeList = ({recipes}) => {
 }
 
 export default RecipeList;
-
-// <style jsx>{`
-// .recipe-list {
-//   display: flex;
-//   flex-flow: row wrap;
-//   border: 1px red solid;
-//   display: flex;
-//   border: 1px red solid;
-// }
-// `}</style>
