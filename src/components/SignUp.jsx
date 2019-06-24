@@ -32,8 +32,7 @@ class SignUp extends Component {
       <style jsx>{`
       .mainContainer {
         width: 100%;
-        background-image: url{background};
-        background-size: 100%;
+        background-size: 100vh;
         background-position: bottom;
       }
 
@@ -43,22 +42,23 @@ class SignUp extends Component {
       }
 
       form {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-        color: white;
+        color: gray;
         position: absolute;
-        top: 50%;
+        background: white;
+        top: 60%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        width:50%;
-        margin: auto;
-        padding: 50px;
+        transform: translate(-90%, -50%);
+        width:40%;
+        height:70%;
+        padding: 20px;
+        border-radius: 5px;
       }
 
       .input-field label {
-        color: white;
+        color: gray;
       }
       .input-field input {
-        color: white;
+        color: gray;
       }
       button {
         background-color: #95a00d;
@@ -73,18 +73,19 @@ class SignUp extends Component {
       input[type=email]:not(.browser-default):focus:not([readonly]),
       input[type=password]:not(.browser-default):focus:not([readonly]),
       textarea.materialize-textarea:focus:not([readonly]){
-        border-color: #95a00d;
+        border-color: white;
         box-shadow: none;
       }
       input[type=text]:not(.browser-default):focus:not([readonly]) + label,
       textarea.materialize-textarea:focus:not([readonly]) + label,
       input[type=email]:not(.browser-default):focus:not([readonly]) + label,
       input[type=password]:not(.browser-default):focus:not([readonly]) + label{
-        color: #95a00d !important;
+        color: white !important;
       }
+
       `}</style>
           <form className="formContainer" onSubmit={this.handleSubmit}>
-            <h5 className=" white-text text-darken-3">SIGN UP</h5>
+            <h5 className=" gray-text text-darken-3">SIGN UP</h5>
             <div className="input-field">
               <label htmlFor="email">Email</label>
               <input type="email" id='email' onChange={this.handleChange} />

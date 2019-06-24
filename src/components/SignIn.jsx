@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import background from '../assets/images/background.jpg';
+import dish from '../assets/images/dish.jpg';
 import { connect } from 'react-redux'
 import { signIn } from '../store/actions/authActions'
 
@@ -25,7 +25,7 @@ class SignIn extends Component {
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       backgroundPosition: "center",
-      backgroundImage: `url(${background})`
+      backgroundImage: `url(${dish})`
     };
     return (
       <div style={ sectionStyle } className="mainContainer">
@@ -46,16 +46,16 @@ class SignIn extends Component {
             position: relative;
           }
           .formContainer{
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
             color: white;
             position: absolute;
-            top: 50%;
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width:50%;
+            width:80%;
+            height:80%;
             margin: auto;
-            // margin-top: 10%;
-            padding: 50px;
+            padding: 25px;
           }
           .input-field label {
             color: white;
