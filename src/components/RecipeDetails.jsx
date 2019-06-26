@@ -4,7 +4,6 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 
 const RecipeDetails = (props) => {
-  console.log(props);
   const { recipe } = props;
   if (recipe) {
     return (
@@ -31,7 +30,7 @@ const RecipeDetails = (props) => {
 }
 
   const mapStateToProps = (state, ownProps) => {
-    console.log(ownProps)
+    // console.log(state);
     const id = ownProps.match.params.id;
     const recipes = state.firestore.data.recipes;
     const recipe = recipes ? recipes[id] : null

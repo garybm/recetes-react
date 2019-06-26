@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import dish from '../assets/images/dish.jpg';
+import background from '../assets/images/background.jpg';
 import { connect } from 'react-redux'
 import { signIn } from '../store/actions/authActions'
 
@@ -25,14 +25,15 @@ class SignIn extends Component {
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       backgroundPosition: "center",
-      backgroundImage: `url(${dish})`
+      backgroundImage: `url(${background})`
     };
     return (
       <div style={ sectionStyle } className="mainContainer">
         <style jsx>{`
           .mainContainer {
             width: 100%;
-            index-z: 1;
+            background-size: 100vh;
+            background-position: bottom;
           }
           body, html {
           height: 100%;
@@ -46,22 +47,22 @@ class SignIn extends Component {
             position: relative;
           }
           .formContainer{
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-            color: white;
+            color: gray;
             position: absolute;
+            background: white;
             top: 60%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            width:80%;
-            height:80%;
-            margin: auto;
-            padding: 25px;
+            transform: translate(-90%, -50%);
+            width:40%;
+            height:50%;
+            padding: 20px;
+            border-radius: 5px;
           }
           .input-field label {
-            color: white;
+            color: gray;
           }
           .input-field input {
-            color: white;
+            color: gray;
           }
           button {
             background-color: #95a00d;
@@ -81,7 +82,7 @@ class SignIn extends Component {
           }
         `}</style>
         <form className="formContainer" onSubmit={this.handleSubmit}>
-          <h5 className="white-text text-white">SIGN IN</h5>
+          <h5 className="gray-text text-darken-3">SIGN IN</h5>
           <div className="input-field">
             <label htmlFor="email">Email</label>
             <input type="email" id='email' onChange={this.handleChange} />
