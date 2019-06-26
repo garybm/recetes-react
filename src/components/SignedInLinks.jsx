@@ -1,8 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import CreateRecipe from './CreateRecipe'
+import { connect } from 'react-redux'
+import { signOut } from '../store/actions/authActions'
 
-const SignedInLinks = () => {
+const SignedInLinks = (props) => {
   return (
     <div>
       <style jsx>{`
@@ -12,14 +14,19 @@ const SignedInLinks = () => {
       `}</style>
       <ul className="right">
         <li><NavLink to='/add'>Add Recipe</NavLink></li>
-        <li><NavLink to='/'>Log Out</NavLink></li>
+        <li><a onClick={ props.signOut}>Log Out</a></li>
         <li><NavLink to='/' className="btn btn-floating lighten-1">GB</NavLink></li>
       </ul>
     </div>
   )
 }
+const mapDispathToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut())
+  }
+}
 
-export default SignedInLinks
+export default connect(null, mapDispathToProps)(SignedInLinks)
 
 // import React from 'react';
 // import { NavLink } from 'react-router-dom';
