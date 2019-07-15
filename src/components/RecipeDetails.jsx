@@ -12,6 +12,8 @@ const RecipeDetails = (props) => {
           <div className="card-content">
             <span className="card-title"> {recipe.title} </span>
             <p> { recipe.description }</p>
+            <p> { recipe.todo }</p>
+            <p> { recipe.directions }</p>
           </div>
           <div className="card-action grey lighten-4 grey-text">
             <div>Posted by { recipe.authorFirstName } { recipe.authorLastName }</div>

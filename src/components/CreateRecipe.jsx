@@ -1,13 +1,48 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createRecipe } from '../store/actions/recipeActions'
+import ToDoItem from './ToDoItem';
 
 class CreateRecipe extends Component {
   state = {
     title: '',
-    ingredient: '',
-    description: ''
+    description: '',
+    list: [
+        {
+            'todo': ''
+        }
+    ],
+    directions: ''
+
   }
+
+  handleKeyPress = e => {
+      if (e.target.value !== '') {
+        if (e.key === 'Enter') {
+          this.createNewToDoItem();
+        }
+      }
+  };
+
+  handleInput = e => {
+    this.setState({
+      todo: e.target.value
+    });
+  };
+
+  createNewToDoItem = (e) => {
+    e.preventDefault();
+    this.setState(({ list, todo }) => ({
+      list: [
+          ...list,
+        {
+          todo
+        }
+      ],
+      todo: ''
+    }));
+  };
+
   handleChange = (e) => {
       this.setState({
         [e.target.id]: e.target.value
@@ -19,13 +54,24 @@ class CreateRecipe extends Component {
       this.props.history.push('/');
     }
 
-
-
+    deleteItem = indexToDelete => {
+      this.setState(({ list }) => ({
+        list: list.filter((toDo, index) => index !== indexToDelete)
+      }));
+    };
 
   render() {
     return (
       <div className="container">
         <style jsx>{`
+          body {
+            background-color: #AFDAD3;
+          }
+
+          form {
+            padding: 5%;
+            margin-top:3%;
+          }
           button {
             background-color: #95a00d;
             color: white;
@@ -76,14 +122,32 @@ class CreateRecipe extends Component {
             <label htmlFor="title">Recipe Title</label>
           </div>
           <div className="input-field">
-            <textarea id="ingredient" className="materialize-textarea" onChange={this.handleChange}></textarea>
-            <label htmlFor="ingredient">Ingredient</label>
-            <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
+          <textarea id="description" className="materialize-textarea" onChange={this.handleChange}></textarea>
+          <label htmlFor="description">Description</label>
+          </div>
+          <div className="ToDo">
+              <div className="ToDo-Container">
+                  <div className="ToDo-Content">
+
+                      {this.state.list.map((item, key) => {
+                              return <ToDoItem
+                                              key={key}
+                                              item={item.todo}
+                                              deleteItem={this.deleteItem.bind(this, key)}
+                                              />
+                        }
+                      )}
+                  </div>
+
+                  <div>
+                     <input type="text" value={this.state.todo} onChange={this.handleInput} onKeyPress={this.handleKeyPress}/>
+                     <button className="ToDo-Add" onClick={this.createNewToDoItem}>+</button>
+                  </div>
+              </div>
           </div>
           <div className="input-field">
-            <textarea id="description" className="materialize-textarea" onChange={this.handleChange}></textarea>
-            <label htmlFor="description">Description</label>
-            <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
+            <textarea id="directions" className="materialize-textarea" onChange={this.handleChange}></textarea>
+            <label htmlFor="directions">Directions</label>
           </div>
           <div className="input-field">
             <button class="button">ADD</button>
