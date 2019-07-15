@@ -126,23 +126,22 @@ class CreateRecipe extends Component {
           <label htmlFor="description">Description</label>
           </div>
           <div className="ToDo">
-              <div className="ToDo-Container">
-                  <div className="ToDo-Content">
+          <div className="ToDo-Container">
+            <div className="ToDo-Content">
+                {this.state.list.map((item, key) => {
+                  return <ToDoItem
+                                  key={key}
+                                  item={item.todo}
+                                  deleteItem={this.deleteItem.bind(this, key)}
+                                  />
+                  }
+                )}
+            </div>
+          <div>
+             <input type="text" value={this.state.todo} onChange={this.handleInput} onKeyPress={this.handleKeyPress}/>
 
-                      {this.state.list.map((item, key) => {
-                              return <ToDoItem
-                                              key={key}
-                                              item={item.todo}
-                                              deleteItem={this.deleteItem.bind(this, key)}
-                                              />
-                        }
-                      )}
-                  </div>
-
-                  <div>
-                     <input type="text" value={this.state.todo} onChange={this.handleInput} onKeyPress={this.handleKeyPress}/>
-                     <button className="ToDo-Add" onClick={this.createNewToDoItem}>+</button>
-                  </div>
+             <button className="ToDo-Add" onClick={this.createNewToDoItem}>+</button>
+          </div>
               </div>
           </div>
           <div className="input-field">
@@ -165,18 +164,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(null, mapDispatchToProps)(CreateRecipe)
-
-
-// <div>
-//   <div className="buttonsMain">
-//     <input
-//       style={{display: 'none'}}
-//       type="file"
-//       onChange={this.handleChange}
-//       ref={fileInput => this.fileInput = fileInput}/>
-//     <button onClick={() => this.fileInput.click()}>Select File</button>
-//     <button onClick={this.handleUpload}>Upload</button>
-//   </div>
-//   <progress className="uploader" value={this.state.progress}/>
-//   <img src={this.state.url || 'https://via.placeholder.com/150'} alt="uploaded images"/>
-// </div>

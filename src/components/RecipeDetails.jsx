@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
+import ToDoItem from './ToDoItem';
 
 const RecipeDetails = (props) => {
   const { recipe } = props;
@@ -12,7 +13,13 @@ const RecipeDetails = (props) => {
           <div className="card-content">
             <span className="card-title"> {recipe.title} </span>
             <p> { recipe.description }</p>
-            <p> { recipe.todo }</p>
+            <p> {recipe.list.map((item, key) => {
+              return <ToDoItem
+                              key={key}
+                              item={item.todo}
+                              />
+              }
+            )}</p>
             <p> { recipe.directions }</p>
           </div>
           <div className="card-action grey lighten-4 grey-text">
