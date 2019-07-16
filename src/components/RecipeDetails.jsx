@@ -13,7 +13,7 @@ const RecipeDetails = (props) => {
           <div className="card-content">
             <span className="card-title"> {recipe.title} </span>
             <p> { recipe.description }</p>
-            <p> {recipe.list.map((item, key) => {
+            <p> Ingredients {recipe.list.map((item, key) => {
               return <ToDoItem
                               key={key}
                               item={item.todo}
