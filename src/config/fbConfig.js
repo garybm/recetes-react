@@ -2,6 +2,7 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import 'firebase/storage';
 
 
 // Your web app's Firebase configuration
@@ -19,4 +20,10 @@ import 'firebase/auth';
 firebase.initializeApp(config);
 // firebase.firestore().setti9ngs({timestampsInSnapshops:true});
 
-export default firebase;
+
+
+const storage = firebase.storage();
+
+export {
+  storage, firebase as default
+};

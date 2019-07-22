@@ -17,7 +17,6 @@ class ToDoItem extends Component {
                 <button className="ToDoItem-Delete"
                      onClick={this.props.deleteItem}>-
                 </button>
-
             </div>
         );
     }

@@ -1,68 +1,64 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createRecipe } from '../store/actions/recipeActions'
-import ToDoItem from './ToDoItem';
+import {storage} from '../config/fbConfig.js';
+import ImageUpload from './ImageUpload'
+
 
 class CreateRecipe extends Component {
-  state = {
-    title: '',
-    description: '',
-    list: [
-        {
-            'todo': ''
-        }
-    ],
-    directions: ''
-
+  constructor() {
+    super();
+    this.state = {
+      title: '',
+      image: null,
+      url: '',
+      progress: 0,
+      description: '',
+      list:[{ ingredient: "" }],
+      directions: ''
+    }
   }
 
-  handleKeyPress = e => {
-      if (e.target.value !== '') {
-        if (e.key === 'Enter') {
-          this.createNewToDoItem();
-        }
-      }
-  };
-
-  handleInput = e => {
-    this.setState({
-      todo: e.target.value
-    });
-  };
-
-  createNewToDoItem = (e) => {
-    e.preventDefault();
-    this.setState(({ list, todo }) => ({
-      list: [
-          ...list,
-        {
-          todo
-        }
-      ],
-      todo: ''
-    }));
-  };
-
   handleChange = (e) => {
-      this.setState({
-        [e.target.id]: e.target.value
-      })
-    }
+    this.setState({
+      [e.target.id]: e.target.value
+    })
+  }
+
+
+  handleListIngredientChange = idx => evt => {
+   const newList = this.state.list.map((ingredient, sidx) => {
+     if (idx !== sidx) return ingredient;
+     return { ...ingredient, ingredient: evt.target.value };
+   });
+
+   this.setState({ list: newList });
+ };
+
+
     handleSubmit = (e) => {
       e.preventDefault();
       this.props.createRecipe(this.state);
       this.props.history.push('/');
     }
 
-    deleteItem = indexToDelete => {
-      this.setState(({ list }) => ({
-        list: list.filter((toDo, index) => index !== indexToDelete)
-      }));
+    handleAddIngredient = () => {
+      this.setState({
+        list: this.state.list.concat([{ ingredient: "" }])
+      });
     };
+
+    handleRemoveIngredient = idx => () => {
+      this.setState({
+        list: this.state.list.filter((s, sidx) => idx !== sidx)
+      });
+    };
+
 
   render() {
     return (
       <div className="container">
+      <ImageUpload />
         <style jsx>{`
           body {
             background-color: #AFDAD3;
@@ -77,7 +73,7 @@ class CreateRecipe extends Component {
             color: white;
             border: none;
             border-radius: 25px;
-            width: 50px;
+            width: 100px;
             height: 50px;
             cursor: pointer;
           }
@@ -114,36 +110,52 @@ class CreateRecipe extends Component {
               width: 50%;
               margin-bottom: 10px;
             }
-            // .input-field {
-            //   display: flex;
-            // }
           `}</style>
         <form className="white" onSubmit={this.handleSubmit}>
+
           <h5 className="grey-text text-darken-3">Create New Recipe</h5>
           <div className="input-field">
-            <input type="text" id='title' onChange={this.handleChange} />
+            <input
+            type="text"
+            id='title'
+            value={this.state.title}
+            onChange={this.handleChange} />
             <label htmlFor="title">Recipe Title</label>
           </div>
           <div className="input-field">
-          <textarea id="description" className="materialize-textarea" onChange={this.handleChange}></textarea>
+          <textarea
+          id="description"
+          className="materialize-textarea"
+          value={this.state.description}
+          onChange={this.handleChange}>
+          </textarea>
           <label htmlFor="description">Description</label>
           </div>
-          <div className="ToDo-Content">
-          <p>Ingredients</p>
-              {this.state.list.map((item, key) => {
-                return <ToDoItem
-                                key={key}
-                                item={item.todo}
-                                deleteItem={this.deleteItem.bind(this, key)}
-                                />
-                }
-              )}
-          </div>
-          <div className="input-field">
-             <input type="text" id='ingredient' value={this.state.todo} onChange={this.handleInput} onKeyPress={this.handleKeyPress}/>
-             <label htmlFor="tingredient">Add Ingredient</label>
-             <button className="ToDo-Add" onClick={this.createNewToDoItem}>+</button>
-          </div>
+
+          <p className="ingredient">Ingredients</p>
+          {this.state.list.map((ingredient, idx) => (
+             <div className="ingredient">
+               <input
+                 type="text"
+                 placeholder={`Ingredient ${idx + 1}`}
+                 value={this.state.list.ingredient}
+                 onChange={this.handleListIngredientChange(idx)}
+               />
+               <button
+                 type="button"
+                 onClick={this.handleRemoveIngredient(idx)}
+               >
+                 -
+               </button>
+             </div>
+           ))}
+           <button
+             type="button"
+             onClick={this.handleAddIngredient}
+             className="small"
+           >
+             +
+           </button>
           <div className="input-field">
             <textarea id="directions" className="materialize-textarea" onChange={this.handleChange}></textarea>
             <label htmlFor="directions">Directions</label>
