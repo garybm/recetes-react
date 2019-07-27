@@ -39,7 +39,9 @@ const RecipeDetails = (props) => {
           </div>
           <div className="card-action  lighten-4 grey-text">
             <h3>Directions</h3>
-            <p> { recipe.directions }</p>
+            {recipe.directions.map((direction, index) => {
+              return <li key={index}>{direction.direction}</li>
+            })}
           </div>
           <div className="card-action grey lighten-4 grey-text">
             <div>Posted by { recipe.authorFirstName } { recipe.authorLastName }</div>
