@@ -14,7 +14,7 @@ class CreateRecipe extends Component {
       url: '',
       progress: 0,
       description: '',
-      list:[{ ingredient: "" }],
+      ingredients:[{ name: "" }],
       directions: ''
     }
   }
@@ -27,12 +27,12 @@ class CreateRecipe extends Component {
 
 
   handleListIngredientChange = idx => evt => {
-   const newList = this.state.list.map((ingredient, sidx) => {
+   const newList = this.state.ingredients.map((ingredient, sidx) => {
      if (idx !== sidx) return ingredient;
-     return { ...ingredient, ingredient: evt.target.value };
+     return { ...ingredient, name: evt.target.value };
    });
 
-   this.setState({ list: newList });
+   this.setState({ ingredients: newList });
  };
 
 
@@ -44,13 +44,13 @@ class CreateRecipe extends Component {
 
     handleAddIngredient = () => {
       this.setState({
-        list: this.state.list.concat([{ ingredient: "" }])
+        ingredients: this.state.ingredients.concat([{ name: "" }])
       });
     };
 
     handleRemoveIngredient = idx => () => {
       this.setState({
-        list: this.state.list.filter((s, sidx) => idx !== sidx)
+        ingredients: this.state.ingredients.filter((s, sidx) => idx !== sidx)
       });
     };
 
@@ -133,12 +133,12 @@ class CreateRecipe extends Component {
           </div>
 
           <p className="ingredient">Ingredients</p>
-          {this.state.list.map((ingredient, idx) => (
+          {this.state.ingredients.map((ingredient, idx) => (
              <div className="ingredient">
                <input
                  type="text"
                  placeholder={`Ingredient ${idx + 1}`}
-                 value={this.state.list.ingredient}
+                 value={this.state.ingredients.name}
                  onChange={this.handleListIngredientChange(idx)}
                />
                <button

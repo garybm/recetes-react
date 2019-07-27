@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
-import chifrijo from '../assets/images/chifrijo.jpg';
+import dish from '../assets/images/dish.jpg';
 
 const RecipeSummary = ({recipe}) => {
   return (
@@ -15,7 +15,7 @@ const RecipeSummary = ({recipe}) => {
         }
         `}</style>
         <div class="card-image">
-          <img src={ chifrijo }/>
+          <img src={ dish }/>
         </div>
         <div class="card-content">
           <span class="card-title">{recipe.title}</span>

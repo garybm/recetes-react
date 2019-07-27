@@ -2,18 +2,18 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
-import chifrijo from '../assets/images/chifrijo.jpg';
+import dish from '../assets/images/dish.jpg';
 
 
 const RecipeDetails = (props) => {
   const { recipe } = props;
+
   if (recipe) {
     return (
       <div className="container section project-details">
       <style jsx>{`
         .card {
           width: 75%;
-
           // border: 1px red solid;
         }
         .section {
@@ -25,11 +25,13 @@ const RecipeDetails = (props) => {
         <h1 className="card-title"> {recipe.title} </h1>
         <div className="card z-depth-0">
         <div class="card-image">
-          <img src={ chifrijo }/>
+          <img src={ dish }/>
         </div>
         <div className="card-action  lighten-4 grey-text">
           <h3>Ingredients</h3>
-          <p> {}</p>
+          {recipe.ingredients.map((ingredient, index) => {
+            return <li key={index}>{ingredient.name}</li>
+          })}
         </div>
           <div className="card-action  lighten-4 grey-text">
           <h3>Description</h3>
