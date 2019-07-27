@@ -11,6 +11,17 @@ class Dashboard extends React.Component {
     const { recipes } = this.props;
     return (
       <div className="container">
+      <style jsx>{`
+        container {
+
+          border: 1px solid red;
+        }
+      h2 {
+        font-size: 60px;
+        align: center;
+      }
+
+      `}</style>
         <h2>My Recipes</h2>
           <RecipeList recipes={recipes} />
       </div>
