@@ -14,7 +14,7 @@ class CreateRecipe extends Component {
       url: '',
       progress: 0,
       description: '',
-      ingredients:[{ name: "" },{ name: "" },{ name: "" }],
+      ingredients:[{ ingredient: "" },{ ingredient: "" },{ ingredient: "" }],
       directions: [{ direction: "" },{ direction: "" },{ direction: "" }]
     }
   }
@@ -32,54 +32,22 @@ class CreateRecipe extends Component {
     this.props.history.push('/');
   }
 
-//Ingredients:
+  addIngredient(){
+    this.setState({ingredients: [...this.state.ingredients,""]}
+    )
+  }
 
+  handleIngredientChange(e, index){
+    console.log(e);
+    e.preventDefault();
+    this.state.ingredients[index] = e.target.value
+    this.setState({ingredients: this.state.ingredients})
+  }
 
-  handleListIngredientChange = idx => evt => {
-   const newList = this.state.ingredients.map((ingredient, sidx) => {
-     if (idx !== sidx) return ingredient;
-     return { ...ingredient, name: evt.target.value };
-   });
-
-   this.setState({ ingredients: newList });
- };
-
-    handleAddIngredient = () => {
-      this.setState({
-        ingredients: this.state.ingredients.concat([{ name: "" }])
-      });
-    };
-
-    handleRemoveIngredient = idx => () => {
-      this.setState({
-        ingredients: this.state.ingredients.filter((s, sidx) => idx !== sidx)
-      });
-    };
-
-//Directions
-
-
-
-  handleDirectionsDirectionChange = idx => evt => {
-   const newDirections = this.state.directions.map((direction, sidx) => {
-     if (idx !== sidx) return direction;
-     return { ...direction, direction: evt.target.value };
-   });
-
-   this.setState({ directions: newDirections });
- };
-
-    handleAddDirection = () => {
-      this.setState({
-        directions: this.state.directions.concat([{ name: "" }])
-      });
-    };
-
-    handleRemoveDirection = idx => () => {
-      this.setState({
-        directions: this.state.directions.filter((s, sidx) => idx !== sidx)
-      });
-    };
+  handleIngredientRemove(index){
+    this.state.ingredients.splice(index, 1)
+    this.setState({ingredients: this.state.ingredients})
+  }
 
   render() {
     return (
@@ -166,56 +134,35 @@ class CreateRecipe extends Component {
           </textarea>
           <label htmlFor="description">Tell us about your recipe.</label>
           </div>
-          <p>List your ingredients one at a time:</p>
-          {this.state.ingredients.map((ingredient, idx) => (
-             <div className="ingredient">
-               <input
-                 type="text"
-                 placeholder={`Ingredient ${idx + 1}`}
-                 value={this.state.ingredients.name}
-                 onChange={this.handleListIngredientChange(idx)}
-               />
-               <button
-                 type="button"
-                 onClick={this.handleRemoveIngredient(idx)}
-               >
-                 -
-               </button>
-             </div>
-           ))}
-           <button
-             type="button"
-             onClick={this.handleAddIngredient}
-             className="small"
-           >
-             +
-           </button>
-
-           <p>Add your instructions one at a time:</p>
-           {this.state.directions.map((direction, idx) => (
-              <div className="direction">
-                <textarea
+          <div className="input-field">
+            <p>List your ingredients one at a time:</p>
+              {this.state.ingredients.map((ingredient, index) =>{
+                return (
+                  <div key={index}>
+                  <input
                   type="text"
-                  placeholder={` ${idx +1 }`}
-                  value={this.state.directions.direction}
-                  onChange={this.handleDirectionsDirectionChange(idx)}
-                />
-                <button
-                  type="button"
-                  onClick={this.handleRemoveDirection(idx)}
-                >
-                  -
-                </button>
-              </div>
-            ))}
+                  value={this.state.ingredient}
+                  onChange={(e) =>this.handleIngredientChange(e, index)}/>
+                  <button onClick={(ingredient)=>this.handleIngredientRemove(ingredient, index)}>-</button>
+                  </div>
+                )
+              })
+            }
+          </div>
+          <button
+            type="button"
+            onClick={(e) =>this.addIngredient(e)}
+            className="small">+</button>
+
+          <p>Add your instructions one at a time:</p>
+
             <button
               type="button"
-              onClick={this.handleAddDirection}
               className="small"
             >
               +
             </button>
-          <button class="button">PUBLISH!</button>
+          <button onClick={(e)=>this.handleSubmit(e)} class="button">PUBLISH!</button>
         </form>
       </div>
     )

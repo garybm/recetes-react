@@ -30,7 +30,7 @@ const RecipeDetails = (props) => {
         <div className="card-action  lighten-4 grey-text">
           <h3>Ingredients</h3>
           {recipe.ingredients.map((ingredient, index) => {
-            return <li key={index}>{ingredient.name}</li>
+            return <li key={index}>{ingredient}</li>
           })}
         </div>
           <div className="card-action  lighten-4 grey-text">
@@ -40,7 +40,7 @@ const RecipeDetails = (props) => {
           <div className="card-action  lighten-4 grey-text">
             <h3>Directions</h3>
             {recipe.directions.map((direction, index) => {
-              return <li key={index}>{direction.direction}</li>
+              return <li key={direction.id}>{direction.direction}</li>
             })}
           </div>
           <div className="card-action grey lighten-4 grey-text">
